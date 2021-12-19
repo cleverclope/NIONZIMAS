@@ -75,17 +75,6 @@ export class SignupComponent implements OnInit {
     const personalEmail = this.secondFormGroup.get('mail')!.value;
     const password = this.secondFormGroup.get('Password')!.value;
 
-      email: String
-  gender: String
-  names: String
-  dateOfBirth: String
-  entityId: String
-  password: String
-  entityName: String
-  contact: String
-  physicalAddress: String
-  emailAddress: String
-
     console.log(companyID, companyName, companyContact, companyAdress, addressEmail, myName, gender, dob, personalEmail, password)
 
     const signUpDetails = new SignUpUser(companyID, companyName, companyContact, companyAdress, addressEmail, myName,

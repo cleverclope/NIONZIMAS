@@ -1,0 +1,102 @@
+<main>
+
+    <article>
+        <div class="logo">
+            <img src="./assets/logos/logo.png" alt="">
+        </div>
+    
+        <section>
+    
+            <h1>Sign in</h1>
+    
+            <h4>New User? <a [routerLink]="['/signup']">Create an Account</a></h4>
+    
+            <form [formGroup]="loginForm">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Username</mat-label>
+                    <input matInput formControlName='Username'>
+                    <mat-icon matSuffix>person</mat-icon>
+                    <mat-error
+                        *ngIf='this.getValue.Username.invalid && (this.getValue.Username.dirty || this.getValue.Username.touched)'>
+                        Username required
+                    </mat-error>
+            
+                </mat-form-field>
+    
+                <mat-form-field appearance="legacy">
+                    <mat-label>Password</mat-label>
+                    <input matInput formControlName="Password" type="password">
+                    <mat-icon matSuffix>lock</mat-icon>
+                    <mat-error
+                        *ngIf='this.getValue.Password.invalid && (this.getValue.Password.dirty || this.getValue.Password.touched)'>
+                        Password required
+                    </mat-error>
+                </mat-form-field>
+    
+                <!-- <div class="bottom-btn">
+                    <button mat-raised-button color="accent" [routerLink]="['/signup']">Signup</button>
+                </div> -->
+                <button 
+                    mat-raised-button 
+                    color="primary" 
+                    (click)="onLogin()"
+                    [disabled]='!this.loginForm.valid'>
+                    {{Login}}
+                </button>
+
+                <footer>
+                    &copy; 2021 Apps
+                </footer>        
+            </form>   
+            
+    
+        </section>
+    </article>
+
+    <div class="bg-image">
+        <img src="./assets/images/Fotolia_187945152_XL.jpg" alt="">
+    </div>
+
+</main>
+
+
+
+
+
+<!-- <h2>Login</h2>
+<p>Enter Username and Password</p>
+
+<form [formGroup]="loginForm">
+    <mat-form-field appearance="legacy">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName='Username'>
+        <mat-icon matSuffix>person</mat-icon>
+        <mat-error
+            *ngIf='this.getValue.Username.invalid && (this.getValue.Username.dirty || this.getValue.Username.touched)'>
+            Username required
+        </mat-error>
+
+    </mat-form-field><br>
+    <mat-form-field appearance="legacy">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="Password" type="password">
+        <mat-icon matSuffix>lock</mat-icon>
+        <mat-error
+            *ngIf='this.getValue.Password.invalid && (this.getValue.Password.dirty || this.getValue.Password.touched)'>
+            Password required
+        </mat-error>
+    </mat-form-field><br>
+    <div class="bottom-btn">
+        <button mat-raised-button color="primary" (click)="onLogin()"
+            [disabled]='!this.loginForm.valid'>{{Login}}</button>
+        <button mat-raised-button color="accent" [routerLink]="['/signup']">Signup</button>
+    </div>
+</form>
+<input type="hidden" #selection> -->
+
+
+
+    <!-- Footer -->
+    <!-- <footer>
+        &copy 2021 Apps
+    </footer> -->

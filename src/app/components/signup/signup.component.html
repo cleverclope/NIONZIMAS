@@ -1,0 +1,171 @@
+<!-- <div class="content" role="main">
+  <p>Create an Account</p>
+  
+  <form [formGroup]="createAccountForm" *ngIf="!apidata" autocomplete="off">
+    <mat-tab-group>
+      <mat-tab label="Entity Details">
+        <h4>Entity Code/ID</h4>
+        <mat-form-field class="example-full-width" appearance="fill">
+          
+          <input matInput formControlName='entityid' placeholder="Ex. UNRA">
+        </mat-form-field>
+        
+        <h4>Entity Name</h4>
+        <mat-form-field class="example-full-width" appearance="fill">
+          
+          <input matInput formControlName='EntityName' placeholder="Ex. Uganda National Roads Authority">
+        </mat-form-field>
+        <h4>Phone Contact</h4>
+        <mat-form-field class="example-full-width" appearance="fill">
+          
+          <input matInput formControlName='EntityContact' placeholder="Ex. 0783837039">
+        </mat-form-field>
+        <h4>Physical Address</h4>
+        <mat-form-field class="example-full-width" appearance="fill">
+          
+          <input matInput formControlName='PhysicalAddress' placeholder="Ex. Nakawa">
+        </mat-form-field>
+        <h4>Email Address</h4>
+        <mat-form-field class="example-full-width" appearance="fill">
+          
+          <input matInput formControlName='EmailAddress' placeholder="Ex. ronald.nios@gmail.com">
+        </mat-form-field>
+      </mat-tab>
+      <mat-tab label="User Details">
+        <h4>Names</h4>
+        <mat-form-field class="example-full-width" appearance="fill">
+          
+          <input matInput formControlName='name' placeholder="Ex. Ronald">
+        </mat-form-field>
+        <h4>Gender</h4>
+    <mat-form-field appearance="fill">
+      <mat-label>Choose one</mat-label>
+      <mat-select formControlName='gender'>
+        <mat-option>Clear</mat-option>
+        <mat-option value="Male">Male</mat-option>
+        <mat-option value="Female">Female</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <h4>Email Address</h4>
+        <mat-form-field class="example-full-width" appearance="fill">
+            
+            <input matInput formControlName='mail' placeholder="Ex. Ronald@realm.net" type="email">
+          </mat-form-field>
+          <h4>Password</h4>
+        <mat-form-field class="example-full-width" appearance="fill">
+            
+            <input matInput formControlName='Password' type="password">
+          </mat-form-field>
+          <h4>Phone Contact</h4>
+          <mat-form-field class="example-full-width" appearance="fill">
+          
+            <input matInput formControlName='Contact' placeholder="Ex. 0783837039">
+          </mat-form-field>
+          <h4>Choose a date</h4>
+          <mat-form-field appearance="fill">
+            
+            <input matInput [matDatepicker]="picker" formControlName='dob'>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field> 
+  
+          <div class="bottom-btn">
+           
+            <button mat-raised-button (click)='onSubmit()'>{{loading}}</button>
+        </div> 
+  
+          </mat-tab>
+      
+     
+    </mat-tab-group>
+    </form>
+   <app-sign-up-details [JsonResult]="apidata"></app-sign-up-details>
+  
+  
+   
+</div>
+ -->
+ <main>
+  <article>
+<mat-horizontal-stepper linear #stepper>
+  <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Company/Entity Details</ng-template>
+      <mat-form-field>
+        <mat-label>Company ID</mat-label>
+        <input matInput formControlName="entityid" placeholder="Eg. UNRA" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Company Name</mat-label>
+        <input matInput formControlName="EntityName" placeholder="Eg. UNRA" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Company Contact</mat-label>
+        <input matInput formControlName="EntityContact" placeholder="Eg. UNRA" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Physical Address</mat-label>
+        <input matInput formControlName="PhysicalAddress" placeholder="Eg. UNRA" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Email Address</mat-label>
+        <input matInput formControlName="EmailAddress" placeholder="Eg. UNRA" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Fill out your Personal Details</ng-template>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" placeholder="Ex. 1 Main St, New York, NY"
+               required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Phone Contact</mat-label>
+        <input matInput formControlName="Contact" placeholder="Ex. 1 Main St, New York, NY"
+               required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Gender</mat-label>
+        <input matInput formControlName="gender" placeholder="Ex. 1 Main St, New York, NY"
+               required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Date Of Birth</mat-label>
+        <input matInput formControlName="dob" placeholder="Ex. 1 Main St, New York, NY"
+               required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Email/User name</mat-label>
+        <input matInput formControlName="mail" placeholder="Ex. 1 Main St, New York, NY"
+               required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="Password" placeholder="Ex. 1 Main St, New York, NY"
+               required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Create</button>
+      </div>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>
+</article>
+</main>
+<app-sign-up-details [JsonResult]="apidata"></app-sign-up-details>
+

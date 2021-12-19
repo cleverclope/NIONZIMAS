@@ -7,14 +7,14 @@ import { IP_ADRESS_PORT } from 'src/app/Networks/network_config';
   providedIn: 'root'
 })
 export class SignupUserService {
-  BASE_URL = `${IP_ADRESS_PORT}/staff-members`
+
+  BASE_URL = `${IP_ADRESS_PORT}`
 
   constructor( private _http: HttpClient) { }
 
   public saveClient(postData: SignUpUser) {
-    let endPoint = "/staff-members"
-    // this._http.post(this.BASE_URL + endpoint, postData).subscribe(data => {
-    this._http.post(this.BASE_URL, postData).subscribe(data => {
+    let endPoint = "CreateUserAccount" 
+    this._http.post(this.BASE_URL + endPoint, postData).subscribe(data => {
       console.log(data);
     });
   }

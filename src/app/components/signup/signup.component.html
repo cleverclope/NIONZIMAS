@@ -42,7 +42,7 @@
   <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>Fill out your Personal Details</ng-template>
-      
+
       <mat-form-field>
         <mat-label>Name</mat-label>
         <input matInput formControlName="name" placeholder="Ex. 1 Main St, New York, NY"
@@ -80,7 +80,7 @@
       </mat-form-field>
       <div>
         <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Create</button>
+        <button mat-button matStepperNext (click)="createUser()">Create</button>
       </div>
     </form>
   </mat-step>

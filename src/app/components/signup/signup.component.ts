@@ -61,7 +61,7 @@ export class SignupComponent implements OnInit {
     });
   }
 
-  submitStepOne(){
+  createUser(){
     const companyID = this.firstFormGroup.get('entityid')!.value;
     const companyName = this.firstFormGroup.get('EntityName')!.value;
     const companyContact = this.firstFormGroup.get('EntityContact')!.value;
@@ -81,8 +81,6 @@ export class SignupComponent implements OnInit {
     gender, dob, personalEmail, password)
 
     this._signupUserService.saveClient(signUpDetails)
-
-
   }
 }
 

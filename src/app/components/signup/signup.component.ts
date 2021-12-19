@@ -69,15 +69,26 @@ export class SignupComponent implements OnInit {
     const addressEmail = this.firstFormGroup.get('EmailAddress')!.value;
 
     const myName = this.secondFormGroup.get('name')!.value;
-    const myContacts = this.secondFormGroup.get('Contact')!.value;
+    // const myContacts = this.secondFormGroup.get('Contact')!.value;
     const gender = this.secondFormGroup.get('gender')!.value;
     const dob = this.secondFormGroup.get('dob')!.value;
     const personalEmail = this.secondFormGroup.get('mail')!.value;
     const password = this.secondFormGroup.get('Password')!.value;
 
-    console.log(companyID, companyName, companyContact, companyAdress, addressEmail, myName, myContacts, gender, dob, personalEmail, password)
+      email: String
+  gender: String
+  names: String
+  dateOfBirth: String
+  entityId: String
+  password: String
+  entityName: String
+  contact: String
+  physicalAddress: String
+  emailAddress: String
 
-    const signUpDetails = new SignUpUser('',companyID, companyName, companyContact, companyAdress, addressEmail, myName, myContacts,
+    console.log(companyID, companyName, companyContact, companyAdress, addressEmail, myName, gender, dob, personalEmail, password)
+
+    const signUpDetails = new SignUpUser(companyID, companyName, companyContact, companyAdress, addressEmail, myName,
     gender, dob, personalEmail, password)
 
     this._signupUserService.saveClient(signUpDetails)

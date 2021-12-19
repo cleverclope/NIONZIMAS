@@ -1,34 +1,28 @@
 export default class SignUpUser {
   _id:string
-  companyID: String
-  companyName: String
-  companyContact: String
-  companyAdress: String
-  addressEmail: String
-  myName: String
-  myContacts: String
+  email: String
   gender: String
-  dob: String
-  personalEmail: String
+  names: String
+  dateOfBirth: String
+  entityId: String
   password: String
+  entityName: String
+  contact: String
+  physicalAddress: String
+  emailAddress: String
 
-
-  constructor(_id: string,  companyID: String, companyName: String, companyContact: String,
-    companyAdress: String, addressEmail: String, myName: String, myContacts: String, gender: String, dob: String, personalEmail: String,
-    password: String){
+  constructor(_id: string,  email: String, gender: String, names: String, dateOfBirth: String, entityId: String,
+     password: String, entityName: String, physicalAddress: String, emailAddress: String){
     this._id=_id
-    this.companyID = companyID
-    this.companyName = companyName
-    this.companyContact = companyContact
-    this.companyAdress = companyAdress
-    this.addressEmail = addressEmail
-    this.myName = myName
-    this.myContacts = myContacts
+    this.email = email
     this.gender = gender
-    this.dob = dob
-    this.personalEmail = personalEmail
+    this.names = names
+    this.dateOfBirth = dateOfBirth
+    this.entityId = entityId
     this.password = password
-
+    this.entityName = entityName
+    this.physicalAddress = physicalAddress
+    this.emailAddress = emailAddress
   }
 }
 
